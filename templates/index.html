@@ -1,0 +1,65 @@
+<form action="/predict" method="POST">
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender">
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+    </select>
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" required>
+
+    <label for="occupation">Occupation:</label>
+    <select name="occupation" id="occupation">
+        <option value="0">Unemployed</option>
+        <option value="1">Student</option>
+        <option value="2">Professional</option>
+        <option value="3">Retired</option>
+    </select>
+
+    <label for="sleep_duration">Sleep Duration (hours):</label>
+    <input type="number" name="sleep_duration" id="sleep_duration" required>
+
+    <label for="quality_of_sleep">Quality of Sleep:</label>
+    <select name="quality_of_sleep" id="quality_of_sleep">
+        <option value="0">Poor</option>
+        <option value="1">Fair</option>
+        <option value="2">Good</option>
+        <option value="3">Excellent</option>
+    </select>
+
+    <label for="physical_activity">Physical Activity Level:</label>
+    <select name="physical_activity" id="physical_activity">
+        <option value="0">Low</option>
+        <option value="1">Moderate</option>
+        <option value="2">High</option>
+    </select>
+
+    <label for="stress_level">Stress Level:</label>
+    <select name="stress_level" id="stress_level">
+        <option value="0">Low</option>
+        <option value="1">Medium</option>
+        <option value="2">High</option>
+    </select>
+
+    <label for="bmi">BMI Category:</label>
+    <select name="bmi" id="bmi">
+        <option value="0">Underweight</option>
+        <option value="1">Normal</option>
+        <option value="2">Overweight</option>
+        <option value="3">Obesity</option>
+    </select>
+
+    <label for="heart_rate">Heart Rate:</label>
+    <input type="number" name="heart_rate" id="heart_rate" required>
+
+    <label for="daily_steps">Daily Steps:</label>
+    <input type="number" name="daily_steps" id="daily_steps" required>
+
+    <label for="systolic_bp">Systolic Blood Pressure:</label>
+    <input type="number" name="systolic_bp" id="systolic_bp" required>
+
+    <label for="diastolic_bp">Diastolic Blood Pressure:</label>
+    <input type="number" name="diastolic_bp" id="diastolic_bp" required>
+
+    <button type="submit">Predict</button>
+</form>
