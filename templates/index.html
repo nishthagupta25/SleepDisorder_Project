@@ -23,6 +23,12 @@
         .result-container {
             margin-top: 2rem;
         }
+        .journal-container {
+            margin-top: 2rem;
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +121,27 @@
                 <p>The predicted sleep disorder is: <strong>{{ prediction }}</strong></p>
             </div>
             {% endif %}
+
+            <!-- Journal Section -->
+            <div class="journal-container">
+                <h3>Journal Your Symptoms</h3>
+                <form action="/submit_journal" method="POST">
+                    <div class="mb-3">
+                        <label for="symptoms" class="form-label">Describe your symptoms today:</label>
+                        <textarea name="symptoms" id="symptoms" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mood" class="form-label">How are you feeling today?</label>
+                        <select name="mood" id="mood" class="form-select" required>
+                            <option value="Happy">Happy</option>
+                            <option value="Stressed">Stressed</option>
+                            <option value="Anxious">Anxious</option>
+                            <option value="Sad">Sad</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Submit Journal</button>
+                </form>
+            </div>
         </div>
     </main>
     <footer class="text-center py-3 bg-dark text-white">

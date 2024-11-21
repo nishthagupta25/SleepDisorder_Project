@@ -1,14 +1,11 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import joblib
 import numpy as np
 
-# Initialize Flask app
 app = Flask(__name__)
 
-# Load the model
-model = joblib.load("C:\\Users\\NISHTHA GUPTA\\Downloads\\sleep_disorder_model.pkl")
+model = joblib.load("C:\\Users\\NISHTHA GUPTA\\OneDrive\\Desktop\\Sleep Disorder\\sleep_disorder_model.pkl")
 
-# Route for the homepage
 @app.route("/", methods=["GET", "POST"])
 def index():
     prediction = None
@@ -49,5 +46,17 @@ def index():
 
     return render_template("index.html", prediction=prediction)
 
-if __name__ == "__main__":
+
+@app.route('/submit_journal', methods=['POST'])
+def submit_journal():
+    symptoms = request.form['symptoms']
+    mood = request.form['mood']
+
+    # Open journals.txt file to save the journal entry
+    with open('journals.txt', 'a') as file:
+        file.write(f"Symptoms: {symptoms}\nMood: {mood}\n\n")
+
+    return redirect(url_for('index'))
+
+if __name__ == '__main__':
     app.run(debug=True)
